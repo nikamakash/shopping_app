@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping</title>
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  text-align: center;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th ,tr{
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+div {text-align: center;}
+
+</style>
+</head>
+<body>
+<div >
+    <br>
+    <a href="/dashboard" > <button   type="submit"> Home </button> </a>
+
+<a href="/myorders" > <button name="myorders" type="submit"> My Orders </button> </a>
+<br>
+<br>
+    <a href="/shopping/cart" > <button   type="submit"> View Cart</button> </a>
+<br>
+<h1 class="product"> Products </h1>
+</div>
+<table>
+  <tr>
+    <th>Product</th>
+    <th>Price</th>
+      <th>Action</th>
+
+
+  </tr>
+    {% for item in data %}
+
+<tr>
+
+    <th>{{item[1]}}</th>
+    <th>{{item[2]}}</th>
+<form  method="POST">
+    <td >
+
+        <input type="hidden" name="addtocart" value={{item[0]}}>
+        <button class="add-button"   type="submit">Add to Cart</button>
+</form>
+        <input type="hidden" name="buynow" value={{item[0]}}>
+                    <a href="/shopping/buynow/{{item[0]}}" > <button class="buy"  type="submit">Buy Now</button></a>
+
+
+    </td>
+
+  </tr>
+
+    {% endfor %}
+</table>
+
+  <div></div>
+</body>
+</html>

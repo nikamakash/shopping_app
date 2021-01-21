@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Details</title>
+</head>
+<body>
+<style>
+table {
+  font-family: arial, sans-serif;
+  text-align: center;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th ,tr{
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+div {text-align: center;}
+
+</style>
+</head>
+<body>
+<div >
+    <br> <br> <br>
+
+
+    <a href="/dashboard" > <button   type="submit"> Home </button> </a>
+    <br> <br> <br>
+</div>
+<table>
+  <tr>
+      <th>Product Name</th>
+    <th>Price</th>
+    <th>Quantity</th>
+
+  </tr>
+    {% for item in data %}
+<tr>
+
+    <th>{{item[2]}}</th>
+    <th>{{item[3]}}</th>
+    <th>{{item[4]}}</th>
+
+
+  </tr>
+    {% endfor %}
+</table>
+
+<br> <br> <br><br>
+ <div>
+
+
+            <a href="/myorders" > <button name="view"   type="button"> Back </button> </a>
+        </div>
+</body>
+</html>

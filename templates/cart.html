@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> My Cart</title>
+</head>
+<body>
+<style>
+table {
+  font-family: arial, sans-serif;
+  text-align: center;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th ,tr{
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+div {text-align: center;}
+
+</style>
+</head>
+
+
+<body>
+<div >
+    <br> <br> <br>
+    <a href="/shopping" > <button   type="button"> Add Product</button> </a>
+    <br> <br> <br>
+</div>
+<form method="post">
+<table>
+  <tr>
+    <th>Product</th>
+    <th>Price</th>
+    <th>Quanity</th>
+    <th> Action </th>
+  </tr>
+    {% for item in data %}
+<tr>
+
+    <td>{{item[1]}}</td>
+    <td>{{item[2]}}</td>
+
+    <td>
+          <input type="text"  name={{item[0]}} required><br><br>
+
+    </td>
+    <th >
+
+
+            <a href="/shopping/cart/remove/{{item[0]}}" > <button name="delete" value={{item[0]}}  type="button"> Delete Product</button> </a>
+
+
+    </th>
+
+  </tr>
+    {% endfor %}
+</table>
+            <div>
+
+                <br><br><br><br>
+
+                    <a href="/shopping/confirmorder" > <button name="Continue"   type="submit"> Continue </button> </a>
+                </form>
+            </div>
+</body>
+</html>

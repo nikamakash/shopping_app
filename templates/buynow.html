@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Buy Now</title>
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  text-align: center;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th ,tr{
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+div {text-align: center;}
+
+</style>
+</head>
+<body>
+<br>
+<div >
+    <br> <br> <br>
+    <a href="/shopping" > <button   type="button"> Cancel Order</button> </a>
+
+    <br>
+    <h1 class="product"> Buy Now </h1>
+<br> <br>
+</div>
+<form method="post">
+<table>
+  <tr>
+    <th>Product</th>
+    <th>Price</th>
+    <th>  Quantity  </th>
+
+
+  </tr>
+
+    {% for item in data %}
+    <tr>
+
+        <td>{{item[1]}}</td>
+        <td>{{item[2]}}</td>
+        <td>
+              <input type="text"  name='qty' required><br><br>
+        </td>
+
+
+
+    </tr>
+    {% endfor %}
+
+</table>
+
+<br> <br> <br>
+<br>
+
+            <div>
+
+            <a href="/shopping/confirmmyorder" > <button name="Continue"   type="submit"> Continue </button> </a>
+
+        </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>admin panel</title>
+</head>
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  text-align: center;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th ,tr{
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+div {text-align: center;}
+
+</style>
+</head>
+<body>
+<div >
+    <br> <br> <br>
+
+<a href="/admin" > <button   type="submit"> Back</button> </a>
+
+    <br> <br> <br>
+</div>
+<table>
+  <tr>
+    <th>User ID</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th> Password </th>
+    <th>Mobile</th>
+    <th> Address </th>
+  </tr>
+    {% for item in res %}
+<tr>
+
+    <th>{{item[0]}}</th>
+    <th>{{item[1]}}</th>
+    <th>{{item[2]}}</th>
+    <th>{{item[3]}}</th>
+    <th>{{item[4]}}</th>
+    <th>{{item[5]}}</th>
+
+  </tr>
+    {% endfor %}
+</table>
+
+</table>
+</body>
+</html>

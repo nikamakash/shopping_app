@@ -1,0 +1,110 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+div,th,td,.bottom,.head{
+align: center;
+text-align: left;
+border-collapse: collapse;
+}
+
+
+
+.bottom{
+text-align: center;
+}
+
+.head{
+text-align: center;
+}
+table.mytable-marg{
+	border-collapse: collapse;
+}
+table.mytable-marg td, table.mytable-marg th{
+  border: 1px solid #ccc;
+}
+.mytable-marg{
+	margin:0 auto;
+}
+
+.info{
+
+ margin: 25px 600px 25px;
+}
+
+
+
+</style>
+</head>
+<body>
+
+
+<div class="head" >
+    <br> <br> <br>
+<h1>  *** Order Confirmation ***</h1>
+
+
+
+    <br> <br> <br>
+</div>
+
+
+    <table class="mytable-marg">
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th> Total</th>
+        </tr>
+    {% for item in data %}
+
+        <tr>
+
+            <th>{{item[1]}}</th>
+            <th>{{item[2]}}</th>
+            <th>{{item[3]}}</th>
+            <th>{{item[4]}}</th>
+
+
+         </tr>
+    {% endfor %}
+    </table>
+
+    <br> <br>
+
+    <p align="center">Total Bill : Rs. <b>{{total_bill}}</b></p>
+
+<br>
+
+
+
+<div class="info" >
+
+      Name: {{info[0]}} <br>
+        Delivery Address: {{info[1]}}<br>
+         Contact: {{info[2]}}<br>
+          Time: {{info[3]}}<br>
+
+
+</div>
+<br>
+<br>
+
+        <div class="bottom" align="center">
+        <form method="post">
+            <a href="/thanku" > <button name="confirm"   type="submit"> Confirm and Print </button> </a>
+        </form>
+        </div>
+</body>
+</html>
+
+
+
+
+
+
+

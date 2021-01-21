@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>admin panel</title>
+</head>
+<body>
+<style>
+table {
+  font-family: arial, sans-serif;
+  text-align: center;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th ,tr{
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+div {text-align: center;}
+
+</style>
+</head>
+<body>
+<div >
+    <br> <br> <br>
+
+<a href="/" > <button   type="submit"> Home</button> </a>
+    <a href="/admin/users" > <button   type="submit"> All Customers</button> </a>
+    <a href="/admin/newproduct" > <button   type="submit"> Add New Product</button> </a>
+    <br> <br> <br>
+</div>
+<table>
+  <tr>
+    <th>Product</th>
+    <th>Price</th>
+    <th>Quanity</th>
+    <th> Action </th>
+  </tr>
+    {% for item in data %}
+<tr>
+
+    <th>{{item[1]}}</th>
+    <th>{{item[2]}}</th>
+    <th>{{item[3]}}</th>
+    <td >
+
+            <div>
+            <a href="/admin/updateproduct/{{item[0]}}" > <button name="update" value={{item[0]}}  type="button"> Update Product</button> </a>
+
+            <a href="/admin/deleteproduct/{{item[0]}}" > <button name="delete" value={{item[0]}}  type="button"> Delete Product</button> </a>
+        </div>
+
+    </td>
+
+  </tr>
+    {% endfor %}
+</table>
+
+</table>
+</body>
+</html>
